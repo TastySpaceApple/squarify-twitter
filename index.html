@@ -76,6 +76,7 @@
     }
     .file-upload input{
       opacity:0;
+      position:absolute;
     }
     @media screen and ( max-height: 880px ){
         body > div {
@@ -95,8 +96,8 @@
     </div>
     <p>upload your profile image</p>
     <label class="file-upload">
-      <span><i class="icon file-upload__icon"></i> Upload</span>
       <input type="file" id="file-upload" />
+      <span><i class="icon file-upload__icon"></i> Upload</span>
     </label>
     <canvas width="400" height="400" id="image-canvas" style="display:none; max-width: 100%;"></canvas>
     <a id="download" class="file-download" style="display:none;"><span><i class="icon file-download__icon"></i> Download</span></a>
