@@ -1,4 +1,4 @@
-"# squarify-twitter" 
+# squarify-twitter
 
 Don't be sheeple, be sheeple with a sqaure profile picture.
 
