@@ -1,0 +1,121 @@
+﻿<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Geo" rel="stylesheet">
+
+  <style type="text/css">
+    body > div{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%, -50%);
+      text-align:center;
+      font-family: 'Geo', sans-serif;
+      font-size:30px;
+    }
+    .logo-sqaure{
+      padding:.5em;
+      border:5px groove #000;
+    }
+    .logo-sqaure:before{
+      content:'';
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADXklEQVR4Xu2bW4hNURjHf/+FmAdFLgkPwoN7yoPcSQopmhekhAeXxzEvSjOKlCQpSpIHKcktkhIPIsKjXHLLi0tRE5Hrw/q0dKa2mXHO3rNnb5NZ53V//7X+33+vs9b/+9Y5ood/1MPzJwqQWAF9gfE9YEU8Bb615plcAWMlPf/fBTCzycDDKEBFgbgCEks+fgXiHhA3wXgKxGMw+oD/XIFohKITjFY41gKxGIrVYCyHu2U/4KaZ7QVuA5+BocBySTuAYQl7cg2YDdR1xrIU6gMknQD6mNmqLOTMrAnYDVgHuIHOuV3e+/fAaWCSpDNZxk/GFiqAmdUDl5xzx8xsbRqSko567zemiQVCz+Ie8LPNqkgJh6IFCE3VJ4BzzjWbWTNU7Tx/N7ORQEvKDOYBH51zW8xsU0rMH2FFCzAReJyYcUF4w8CYv5C9YmZLMiSi8HUws+0ZMKUKsBo41YZcaLdvlLQVGJV8JumI935zhmQaJO3PEN8utNAVAFR7ow6Y65xbZmazgImSznnv16dNSNIjYELa+I7iihYgbDJrgJMpSIaOdL/kJUUtjKQ3wPBacdWeFyqAmS12zi303u+qnOV5uLbF1kn6UmNTrTlf0QLMAO7WZNG5gOmSco9dqACSDnjvGzqXX01Uo6R9NaNqBBQqABDO9WltjsK8nH/jJV0FFuUdrGgBAr/XZrYUeJCXbAI/RNJboHfeMcsQIHD8bGZ7gINdtBk2SdqZN/mAL0UAM1sBXOwKwsAgSS+AAV0xXikCAPfNbCbwNS/pSmG1Ie84rfiyBAjz3TCzlcC7HOTrg1vMgW8HLVOAMPkHMwve/TjwKmMiUyTdAvpnxFUNL1uAQMZLOuy9bwR+pExmnKTrna35q81RpgBvJJ333h8CnqVMPITNCThgcAZM6tAiBThrZqEl9gl4WVnyHbW4/ka2zjm3rVLr90qdUcbAIgUIVO6Y2QHgQqVtlYbeIGCdpGChR6QB5IkpWoBWbi2SLnvvQ4c31PDBxYVKLrzZgcBoYKqk+UBoc+V2eGlFKUuAtHxKj4sCxOvxeD0er8fj9Xi8Ho/X493yerwUTxB9QPQB0QdEHxB9QPQB0QdEH9BqOpJ/m+tTRkuqFLdTfZLQnQq/Mvv9if8d7gZv5J9S+AXq3+1QIvlBZwAAAABJRU5ErkJggg==');
+      width:64px;
+      height:64px;
+      display:block;
+      position:absolute;
+      left:50%;
+      margin-left:-32px;
+      top:-60px;
+      z-index:500;
+    }
+    h1, h2{
+      margin:0;
+    }
+    .file-upload, .file-download{
+      display:block;
+      width:100%;
+      height:64px;
+      text-align:center;
+      cursor:pointer;
+      transition:transform .2s;
+      color:#000;
+      text-decoration:none;
+    }
+    .file-download span, .file-upload span{
+      display:block;
+    }
+    .icon{
+      display:inline-block;
+      vertical-align:middle;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 64px;
+      width: 64px;
+    }
+    .file-upload__icon{
+      background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAD3UlEQVR4Xu2bTYgcRRSA36vqWY3iISzGQ2Z6qtMdPaxKFBKyhIABAwqiECQ5KOxNPXhShBy85Ac0d/GSYAKJkGAwggdBJAZBXXAHjImgS890zey4JMTVEHbcnUzXe9LjX5Bd7G6H3fmpvg28V13v61dV7716gzDiD464/WABWA8YcQJ2CYy4A+TeBNHzvEfR4H1rCZAl34ii6MdevjPPEkBfqbPAsL+XE0k/Fs+U6t7kJbgUp9dZXTIzAL/kPwzCXGEWe0nQ1V5MIu0YDuMbDPwak7mwcdOmA5VKpZNWdzW5zAACpXYyw9cYO6Xwp7D5fyeQRd9X6ilg+ISYF4XAi+g4+8MwbGcZ49+yAwmApXgSO3SeBEx3TLyv2Wwu5YUwWADK5T0AeJEEKkk0bgA/FQCX711eeva769dbeSAMFIAgCO6iTvwVAmwjog4zoJSiAEw3jBAPaa1vZoUwUAAS44rF4oYxKZ8WLO5JfhskVwAcIRQnIh29PPQAVjJwS1l9j4AXqvXozZEEoMrqqgT8yAKwHmCXgN0D1mUTDDYHRSrEz2d9eW555lu1ev29v/TXfRMMlHqCGT4norYAyByMZAIhxAOJfLWu/45h+gaA7IzdX9hYuNVqtUQmo1IKj4+Pm18XFl7HmF6pNhuq7zwgAUCF9kkGfCalTZnEEOEYAdzsfwDEuxmdFzNZ9x/CiPTxQADoOMsnJMrFsB71FIBf9mYQ+bO+9wALwHqAXQJ2D7CboD0F7DFo4wAbCNlI0IbCNhfoZTY4MMlQUg8wxHslytU8YAMjPNKFg8xsxAe1udpMcuscA3yrtV6+E9xWpbYxwCQzvDsQ6XD2ggjPVOv17YFShzimKXDEwarW5wCAExBbyuVpBNyR4BoIALPzsz+ncH2ZyHiu+6FksRjO6Rd8paaA4VRXl2CaC2KqVqvN+q46R0B3R43Gc10gSh3s24oQGviBJS6kAPCnCO9CwPeTmMErebuF4C+IuI2Ib7sNdTRpg/Fc96xAcQAAv/xDiXf1XVHUL/oBOObV9Ib/I4mElbARnX6wWNxs0DkOEq6Aga3VOb0vkep6BsBjd47NBL/UGvpw3xRF8xi+gk63zD0xMVFYbrXOGICX0t73r3tZvEcAcg9jAdjrcdsfYBskbIeIbZFZox6hpEtcEF9GhD3i9tia9gqvdE6iXBqLhfwGEd4JtX4r61mauU8wSUr8kjoPArqRWl88BNpImNRaX8s6nzwAuoms77qPoxBr+n+BlYwzBk3btCvz8/O/ZTW+a0gepWHSsQCG6WvmscV6QB5qw6RjPWCYvmYeW0beA34HenqufQBvNS8AAAAASUVORK5CYII=');
+    }
+    .file-download__icon{
+      background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABd0lEQVRoQ+2YO07EMBCGv4UG0VAv3IAzIPHot0LiOsCJQKJH0FFzBLZAVHSIAgEayZa8VszYURwnaNJl4x3/r3Fmd8HMr8XM8WMEWjtoDvx3B56AL+CoFtHaETICmnPmgKKQRcgi5BS40pSInvv1cYT61klun9vEP4UEfN2YQN86gxC4BkoV7NvEss8l6MNmiQNGoCCG5kAsljSfRcgi1KGAnUJOlB1gD3iLREq9B5bAO/CZiNXop9ANcAicAK8BqC4CB8AD8AycT4XAGXAHrIHTgERMwIPfB1bA/VQICI4uEiGBXPBSa/QIeSFDEhKnW/ej/sLFRkj8pbyv04xA6MQLsA18A1tALvimDsRO7LoPPjKVn4QDMQm5z4lN2M9NIxQCkZ6QK3XapKaLyRAoGH82lhqBocZpc0BToPY0qu1vTWwO9M2I8r0qx+ijG8gqYd4oK4Pg8dB/bI0BPN5Djbi6oAXqkj2NQIlaNdaaAzVULak5ewd+ATbenjGl0wheAAAAAElFTkSuQmCC');
+    }
+    .file-download:hover, .file-upload:hover{
+      transform:scale(1.1);
+    }
+    .file-upload input{
+      opacity:0;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="logo-sqaure">
+      <h2>Don't give in,</h2>
+      <h1>Squarify</h1>
+    </div>
+    <p>upload your profile image</p>
+    <label class="file-upload">
+      <span><i class="icon file-upload__icon"></i> Upload</span>
+      <input type="file" id="file-upload" />
+    </label>
+    <canvas width="400" height="400" id="image-canvas" style="display:none;"></canvas>
+    <a id="download" class="file-download" style="display:none;"><span><i class="icon file-download__icon"></i> Download</span></a>
+  </div>
+  <script>
+    function loadFile(file) {
+      var reader = new FileReader();
+      reader.addEventListener("load", function () { loadImage(this.result); });
+      reader.readAsDataURL(file);
+    }
+
+    function loadImage(url) {
+      var canvas = document.querySelector('#image-canvas'),
+        ctx = canvas.getContext('2d');
+      var image = new Image();
+
+      image.onload = function () {
+        var padding = canvas.width * 3 / 20; // magiccc number so magical man
+        ctx.drawImage(image, padding, padding, canvas.width - padding * 2, canvas.height - padding * 2);
+        setDownloadLink('profile.png', canvas.toDataURL())
+      }
+      image.src = url;
+    }
+
+    function setDownloadLink(filename, data) {
+      var link = document.querySelector('#download')
+      link.download = filename;
+      link.href = data;
+      link.style.display = 'block';
+    }
+
+    document.querySelector('.file-upload').addEventListener('change', function (e) {
+      var file = this.querySelector('input').files[0];
+      if (!file) return;
+      document.querySelector('#image-canvas').style.display = 'block';
+      loadFile(file);
+    })
+  </script>
+</body>
+</html>
